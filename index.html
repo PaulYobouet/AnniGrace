@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie de Cartes avec Carrousels</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .outer-card {
+            background-color: #ff66b2; /* Fond rose pour la grande carte */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            background-color: #ffb3e6; /* Fond rose clair pour les cartes */
+        }
+        .card img {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .card-body {
+            background-color: white; /* Fond rose plus clair pour le texte */
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        .card-text {
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Ombre sur le texte */
+        }
+        .carousel-inner img {
+            width: 100%;
+            height: auto;
+        }
+        .main-title {
+            text-align: center;
+            margin: 30px 0;
+            font-size: 2.5rem;
+            color: #ff3399; /* Couleur rose vif pour le titre */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Ombre du texte */
+            white-space: nowrap; /* Empêche le texte de se couper */
+            overflow: hidden; /* Cache le texte qui dépasse */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .main-title img {
+            border-radius: 50%; /* Rond */
+            width: 60px; /* Ajustez la taille du logo */
+            height: 60px; /* Ajustez la taille du logo */
+            margin-right: 15px; /* Espacement entre le logo et le texte */
+        }
+        .letter {
+            display: inline-block;
+            opacity: 0;
+            animation: drop 1s forwards;
+        }
+        @keyframes drop {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .card-body p {
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Ombre du texte dans les cartes */
+        }
+    </style>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="Naza Happy Birthday.mp3" type="audio/mpeg">
+        Votre navigateur ne supporte pas l'élément audio.
+    </audio>
+
+    <div class="container mt-5">
+        <h1 class="main-title">
+            <img src="Image/photo8.jpeg" alt=""> <!-- Logo circulaire ici -->
+            <!-- Les lettres seront insérées ici par JavaScript -->
+        </h1>
+        <div class="outer-card">
+            <div class="row">
+                <!-- Carte avec Carrousel d'Images 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators1" data-slide-to="1"></li>
+                                <li data-target="#carouselExampleIndicators1" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="Image/photo2.jpg" class="d-block w-100" alt="Image 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="Image/photo6.jpeg" class="d-block w-100" alt="Image 2">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="Image/photo4.jpeg" class="d-block w-100" alt="Image 3">
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Précédent</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Suivant</span>
+                            </a>
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="card-text">Chère Grace, ta beauté illumine nos vies comme ces images éblouissantes. Ta présence est un cadeau précieux que nous chérissons chaque jour. Nous t'aimons de tout notre cœur !🌹🌹🌹</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte avec Carrousel d'Images 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleIndicators2" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators2" data-slide-to="1"></li>
+                                <li data-target="#carouselExampleIndicators2" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="Image/photo8.jpeg" class="d-block w-100" alt="Image 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="Image/photo6.jpeg" class="d-block w-100" alt="Image 2">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="Image/photo5.jpeg" class="d-block w-100" alt="Image 3">
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Précédent</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Suivant</span>
+                            </a>
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="card-text">À Grace, ton intelligence rayonne comme les images de ce carrousel. Ta sagesse et ton esprit brillant apportent de la lumière dans nos vies. Nous t'aimons infiniment !</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte avec Carrousel d'Images 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div id="carouselExampleIndicators3" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleIndicators3" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators3" data-slide-to="1"></li>
+                                <li data-target="#carouselExampleIndicators3" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="Image/photo7.jpeg" class="d-block w-100" alt="Image 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="Image/photo2.jpg" class="d-block w-100" alt="Image 2">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="Image/photo6.jpeg" class="d-block w-100" alt="Image 3">
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators3" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Précédent</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators3" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Suivant</span>
+                            </a>
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="card-text">Grace, chaque image dans ce carrousel est aussi belle que ton cœur. Ta beauté intérieure et extérieure nous émerveille à chaque instant. Nous te chérissons profondément !</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte avec Carrousel d'Images 4 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div id="carouselExampleIndicators4" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleIndicators4" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators4" data-slide-to="1"></li>
+                                <li data-target="#carouselExampleIndicators4" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="Image/photo1.jpeg" class="d-block w-100" alt="Image 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="Image/photo3.jpeg" class="d-block w-100" alt="Image 2">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="Image/photo4.jpeg" class="d-block w-100" alt="Image 3">
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators4" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Précédent</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators4" class="carousel-control-next" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Suivant</span>
+                            </a>
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="card-text">Grace, ton intelligence est aussi rare et précieuse que les images de ce carrousel. Ta présence illumine nos vies, et nous t'aimons de tout notre cœur. Joyeux anniversaire !</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte avec Carrousel d'Images 5 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div id="carouselExampleIndicators5" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleIndicators5" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators5" data-slide-to="1"></li>
+                                <li data-target="#carouselExampleIndicators5" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="Image/photo6.jpeg" class="d-block w-100" alt="Image 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="Image/photo2.jpg" class="d-block w-100" alt="Image 2">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="Image/photo5.jpeg" class="d-block w-100" alt="Image 3">
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators5" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Précédent</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators5" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Suivant</span>
+                            </a>
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="card-text">Grace, chaque image ici reflète ta beauté et ton intelligence. Ton amour et ta gentillesse enrichissent nos vies. Nous te souhaitons un anniversaire merveilleux et nous t'aimons énormément !</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte avec Carrousel d'Images 6 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div id="carouselExampleIndicators6" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleIndicators6" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators6" data-slide-to="1"></li>
+                                <li data-target="#carouselExampleIndicators6" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="Image/photo3.jpeg" class="d-block w-100" alt="Image 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="Image/photo6.jpeg" class="d-block w-100" alt="Image 2">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="Image/photo4.jpeg" class="d-block w-100" alt="Image 3">
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators6" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Précédent</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators6" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Suivant</span>
+                            </a>
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="card-text">Pour Grace, ta beauté, ton intelligence et ton amour sont comme ces images magnifiques. Tu es une personne exceptionnelle, et nous t’aimons profondément. Joyeux anniversaire !</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const title = "Joyeux Anniversaire Grace!";
+            const titleElement = document.querySelector(".main-title");
+
+            let index = 0;
+            function addLetter() {
+                if (index < title.length) {
+                    const letter = document.createElement("span");
+                    letter.className = "letter";
+                    letter.textContent = title[index];
+                    titleElement.appendChild(letter);
+                    index++;
+                    setTimeout(addLetter, 100); // Temps entre chaque lettre
+                }
+            }
+            addLetter();
+        });
+    </script>
+</body>
+</html>
